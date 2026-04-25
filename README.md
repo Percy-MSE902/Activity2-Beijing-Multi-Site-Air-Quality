@@ -58,7 +58,6 @@ print(df[pollutants].describe().round(2))
 
 <img width="515" height="145" alt="Screenshot 2569-04-25 at 12 19 08 AM" src="https://github.com/user-attachments/assets/a52e4d34-4b37-4616-a945-09e6034a768c" />
 
-<img width="800" height="500" alt="histogram_pm25" src="https://github.com/user-attachments/assets/d26db341-429d-45b2-9546-1ed3fe923ea3" />
 <img width="158" height="581" alt="Screenshot 2569-04-25 at 12 19 17 AM" src="https://github.com/user-attachments/assets/d2c3e990-df6d-4498-993b-a7e50d24cea3" />
 
 ### 🔍 Key Insight
