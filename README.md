@@ -111,7 +111,7 @@ monthly = df.groupby(["year","month"])["PM2.5"].mean().reset_index()
 plt.plot(monthly["date"], monthly["PM2.5"], color="tomato")
 plt.savefig("lineplot_pm25.png")
 ```
-<img width="1200" height="500" alt="lineplot_pm25" src="https://github.com/user-attachments/assets/1e444a24-9b26-419f-b2bb-88e01a6fd9da" แ
+<img width="1200" height="500" alt="lineplot_pm25" src="https://github.com/user-attachments/assets/1e444a24-9b26-419f-b2bb-88e01a6fd9da" /> 
 
 > **Interpretation:** Clear seasonal cycle — PM2.5 peaks every **November–January** (winter), driven by cold stagnant air and coal heating. Summer months consistently lower.
 
