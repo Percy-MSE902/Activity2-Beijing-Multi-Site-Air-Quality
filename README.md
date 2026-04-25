@@ -79,7 +79,6 @@ print(avg_pm25)
 
 ### Results — Average PM2.5 by Station (µg/m³)
 
-<img width="158" height="581" alt="Screenshot 2569-04-25 at 12 19 17 AM" src="https://github.com/user-attachments/assets/1dd0da38-ac83-4f80-a506-81a15017414b" />
 <img width="491" height="576" alt="Screenshot 2569-04-25 at 12 25 00 AM" src="https://github.com/user-attachments/assets/8ec835f6-dc39-43d3-b8ca-6aab0edb2ac3" />
 
 
@@ -99,8 +98,7 @@ df["PM2.5"].hist(bins=50, color="steelblue", edgecolor="white")
 plt.title("Distribution of PM2.5")
 plt.savefig("histogram_pm25.png")
 ```
-<img width="800" height="500" alt="histogram_pm25" src="https://github.com/user-attachments/assets/d6349e92-0159-4f24-9761-85dae818696e" /><img width="1200" height="500" alt="lineplot_pm25" src="https://github.com/user-attachments/assets/bb760082-ea62-460b-9c05-a180bc26a5b1" />
-
+<img width="800" height="500" alt="histogram_pm25" src="https://github.com/user-attachments/assets/d6349e92-0159-4f24-9761-85dae818696e" />
 
 > **Interpretation:** Strong right skew — majority of readings below 100 µg/m³, but a long tail extends to 999, indicating severe pollution episodes.
 
@@ -113,7 +111,7 @@ monthly = df.groupby(["year","month"])["PM2.5"].mean().reset_index()
 plt.plot(monthly["date"], monthly["PM2.5"], color="tomato")
 plt.savefig("lineplot_pm25.png")
 ```
-<img width="1200" height="500" alt="lineplot_pm25" src="https://github.com/user-attachments/assets/1e444a24-9b26-419f-b2bb-88e01a6fd9da" />
+<img width="1200" height="500" alt="lineplot_pm25" src="https://github.com/user-attachments/assets/1e444a24-9b26-419f-b2bb-88e01a6fd9da" แ
 
 > **Interpretation:** Clear seasonal cycle — PM2.5 peaks every **November–January** (winter), driven by cold stagnant air and coal heating. Summer months consistently lower.
 
