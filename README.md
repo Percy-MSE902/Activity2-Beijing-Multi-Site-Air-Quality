@@ -4,8 +4,6 @@
 
 ## 📹 Video Presentation
 🎬 [Click to Watch (3 min)](https://youtu.be/YOUR_LINK_HERE)  
-*(Replace with your YouTube link after recording)*
-
 
 ---
 
@@ -37,6 +35,8 @@ print(f"Removed {before - after} rows")
 
 ### Results
 - Missing values found in all 6 pollutant columns
+  <img width="278" height="280" alt="Screenshot 2569-04-25 at 12 20 09 AM" src="https://github.com/user-attachments/assets/bb3a4c22-989e-4e5b-91fb-8700bb975d36" />
+
 - Filled with column mean to preserve data volume  
 - Remaining rows with NaN dropped  
 - Output saved as `data/cleaned_data.csv` ✅
@@ -55,13 +55,11 @@ print(df[pollutants].describe().round(2))
 
 ### Results — PM2.5
 
-| Statistic | Value |
-|-----------|-------|
-| **Mean** | 77.38 µg/m³ |
-| **Median** | 51.00 µg/m³ |
-| **Min** | 2.00 µg/m³ |
-| **Max** | 999.00 µg/m³ |
-| **Std Dev** | 91.54 µg/m³ |
+
+<img width="515" height="145" alt="Screenshot 2569-04-25 at 12 19 08 AM" src="https://github.com/user-attachments/assets/a52e4d34-4b37-4616-a945-09e6034a768c" />
+
+<img width="800" height="500" alt="histogram_pm25" src="https://github.com/user-attachments/assets/d26db341-429d-45b2-9546-1ed3fe923ea3" />
+<img width="158" height="581" alt="Screenshot 2569-04-25 at 12 19 17 AM" src="https://github.com/user-attachments/assets/d2c3e990-df6d-4498-993b-a7e50d24cea3" />
 
 ### 🔍 Key Insight
 > **Mean (77.4) is significantly higher than Median (51.0)**  
@@ -85,14 +83,9 @@ print(avg_pm25)
 
 ### Results — Average PM2.5 by Station (µg/m³)
 
-| Rank | Station | Avg PM2.5 | Type |
-|------|---------|-----------|------|
-| 1 | **Gucheng** | 89.1 | Urban / Industrial |
-| 2 | **Dongsi** | 82.4 | Urban / Central |
-| 3 | **Wanshouxigong** | 81.8 | Urban / Central |
-| ... | ... | ... | ... |
-| 11 | **Dingling** | 58.4 | Rural / North |
-| 12 | **Huairou** | 54.2 | Rural / Mountainous |
+<img width="158" height="581" alt="Screenshot 2569-04-25 at 12 19 17 AM" src="https://github.com/user-attachments/assets/1dd0da38-ac83-4f80-a506-81a15017414b" />
+<img width="491" height="576" alt="Screenshot 2569-04-25 at 12 25 00 AM" src="https://github.com/user-attachments/assets/8ec835f6-dc39-43d3-b8ca-6aab0edb2ac3" />
+
 
 ### 🔍 Key Insight
 > Urban stations (Gucheng, Dongsi) show **~65% higher** PM2.5 than rural stations (Huairou, Dingling), reflecting the impact of traffic, industry, and population density on air quality.
@@ -110,8 +103,8 @@ df["PM2.5"].hist(bins=50, color="steelblue", edgecolor="white")
 plt.title("Distribution of PM2.5")
 plt.savefig("histogram_pm25.png")
 ```
+<img width="800" height="500" alt="histogram_pm25" src="https://github.com/user-attachments/assets/d6349e92-0159-4f24-9761-85dae818696e" /><img width="1200" height="500" alt="lineplot_pm25" src="https://github.com/user-attachments/assets/bb760082-ea62-460b-9c05-a180bc26a5b1" />
 
-![Histogram](histogram_pm25.png)
 
 > **Interpretation:** Strong right skew — majority of readings below 100 µg/m³, but a long tail extends to 999, indicating severe pollution episodes.
 
@@ -124,8 +117,7 @@ monthly = df.groupby(["year","month"])["PM2.5"].mean().reset_index()
 plt.plot(monthly["date"], monthly["PM2.5"], color="tomato")
 plt.savefig("lineplot_pm25.png")
 ```
-
-![Line Plot](lineplot_pm25.png)
+<img width="1200" height="500" alt="lineplot_pm25" src="https://github.com/user-attachments/assets/1e444a24-9b26-419f-b2bb-88e01a6fd9da" />
 
 > **Interpretation:** Clear seasonal cycle — PM2.5 peaks every **November–January** (winter), driven by cold stagnant air and coal heating. Summer months consistently lower.
 
@@ -137,8 +129,7 @@ plt.savefig("lineplot_pm25.png")
 df[["PM2.5","PM10","SO2","NO2","O3"]].boxplot()
 plt.savefig("boxplot_pollutants.png")
 ```
-
-![Boxplot](boxplot_pollutants.png)
+<img width="1000" height="600" alt="boxplot_pollutants" src="https://github.com/user-attachments/assets/5e9eb715-e4af-4df0-bf8a-e9b8c614e928" />
 
 > **Interpretation:** PM2.5 and PM10 show the widest interquartile range and most outliers. O3 follows an inverse seasonal pattern — higher in summer (photochemical reaction with sunlight).
 
@@ -169,10 +160,12 @@ print(pm25_corr)
 | **WSPM** | −0.31 | ⬇️ Negative | Wind disperses pollution |
 
 ### Heatmap
-![Correlation Heatmap](heatmap_correlation.png)
+<img width="900" height="700" alt="heatmap_correlation" src="https://github.com/user-attachments/assets/24e2fe52-c481-4027-b868-595819bc0156" />
+
 
 ### Scatter: Temperature vs PM2.5
-![Scatter](scatter_temp_pm25.png)
+<img width="800" height="500" alt="scatter_temp_pm25" src="https://github.com/user-attachments/assets/43ece42d-0855-4f24-b92e-16e2860bd7a0" />
+
 
 ### 🔍 Key Insights
 
